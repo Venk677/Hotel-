@@ -6,7 +6,6 @@ from django.db.models.signals import post_save
 
 class Hotel(models.Model):
     hotel_name=models.CharField(max_length=100)
-    hotel_id=models.IntegerField()
     hotel_location=models.CharField(max_length=100)
     hotel_contact=models.CharField(max_length=10)
     no_of_rooms=models.IntegerField()

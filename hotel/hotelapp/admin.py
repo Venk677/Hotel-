@@ -19,7 +19,7 @@ from django import forms
     #     return super(HotelAdminForm,self).save(commit=commit)
 
 class HotelAdmin(admin.ModelAdmin):
-     list_display = ( 'hotel_name', 'hotel_id', 'hotel_location', 'hotel_contact','no_of_rooms',)
+     list_display = ( 'hotel_name', 'hotel_location', 'hotel_contact','no_of_rooms',)
     # form=HotelAdminForm
 
 
