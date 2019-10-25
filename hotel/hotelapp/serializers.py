@@ -21,12 +21,16 @@ class GuestSerializer(serializers.ModelSerializer):
 class RoomSerializer(serializers.ModelSerializer):
     class Meta :
         model = Room
-        fields = ('room_number','guest_name','room_number','log_in','log_out',)
+        fields = ('room_number','hotel_name','max_guests','price','available',)
 
 class BookingSerializer(serializers.ModelSerializer):
+    hotel_name=HotelSerializer()
+    hotel_manager_name=ManagerSerializer()
+    guest_name=GuestSerializer()
+    room_number=RoomSerializer()
     class Meta :
         model = Booking
-        fields = ('hotel_name','guest_name','room_number','log_in','log_out',)
+        fields = ('hotel_name','hotel_manager_name','guest_name','room_number','log_in','log_out',)
 
 # class HotelSerializer(serializers.ModelSerializer):
 #     hotel_name=serializers.CharField(max_length=100)
